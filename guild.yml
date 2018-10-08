@@ -1,0 +1,15 @@
+- model: facenet
+  description: >
+    Face recognizer described in "FaceNet: A Unified Embedding for
+    Face Recognition and Clustering"
+  operations:
+    prepare-dataset:
+      description: Prepare images for training
+      main: >
+        align.align_dataset_mtcnn ${images} clean
+      python-path: src
+      flags:
+        images:
+          description: Directory containing face images to prepare
+          required: yes
+          arg-skip: yes
